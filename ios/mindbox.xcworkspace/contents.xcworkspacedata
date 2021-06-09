@@ -8,6 +8,6 @@
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:xflexlog.xcodeproj">
+      location = "group:mindbox.xcodeproj">
    </FileRef>
 </Workspace>
