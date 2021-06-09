@@ -8,6 +8,7 @@ target 'mindbox' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+
   target 'mindboxTests' do
     inherit! :complete
     # Pods for testing
