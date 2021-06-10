@@ -54,7 +54,7 @@ export const UserImage = styled.View<{ background: string }>`
   justify-content: center;
 `;
 
-export const UserCenterContainer = styled.TouchableOpacity`
+export const UserCenterContainer = styled.View`
   width: 100%;
   height: 100%;
   align-items: center;
@@ -106,10 +106,12 @@ export const Panel5 = styled.ScrollView.attrs({
   contentContainerStyle: {
     flexGrow: 1,
     justifyContent: 'flex-end',
+    backgroundColor: 'transparent',
+    contentInsetAdjustmentBehavior: 'never',
   },
 })`
   flex: 1;
-  background-color: ${colors.primary};
+  background-color: transparent;
 `;
 
 export const InputContainer = styled.View`
@@ -147,4 +149,22 @@ export const Message = styled.Text`
   font-family: ${metrics.fontNormal};
   font-size: 16px;
   color: ${colors.primaryText};
+`;
+
+export const CameraButtons = styled.View`
+  width: 100%;
+  flex-direction: row;
+  height: 65px;
+  justify-content: space-between;
+  background-color: ${colors.secondary};
+  padding: 0 20%;
+  align-items: center;
+`;
+
+export const CameraButton = styled.TouchableOpacity`
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
 `;

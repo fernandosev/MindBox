@@ -21,7 +21,7 @@ export default function Login() {
 
   return (
     <Container>
-      <SafeAreaView>
+      <SafeAreaView style={{ backgroundColor: 'transparent' }}>
         <LogoContainer>
           <TextLogo />
           <ImageLogo style={{ marginTop: 20 }} />

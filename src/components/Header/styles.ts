@@ -8,7 +8,7 @@ export const Container = styled.SafeAreaView<{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${metrics.baseMargin}px;
+  padding-bottom: ${metrics.baseMargin}px;
 `;
 
 export const TitleContainer = styled.View`

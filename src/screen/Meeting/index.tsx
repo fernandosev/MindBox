@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, Image, View } from 'react-native';
+import { SafeAreaView, Image, View, Keyboard } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useAppDispatch, useAppSelector } from '~/store/hooks';
 import { setKey } from '~/store/modules/teste/slice';
@@ -24,6 +24,8 @@ import {
   Message,
   InputContainer,
   SendMessageButton,
+  CameraButtons,
+  CameraButton,
 } from './styles';
 import Header from '~/components/Header';
 import RowRoom from '~/components/RowRoom';
@@ -39,6 +41,30 @@ export default function Meeting({ navigation }: { navigation: any }) {
   const dispatch = useAppDispatch();
 
   const [activePanel, setActivePanel] = useState<'chat' | 'camera'>('chat');
+  const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+
+  const [microphone, setMicrophone] = useState(true);
+  const [video, setVideo] = useState(true);
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      () => {
+        setKeyboardVisible(true); // or some other action
+      },
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => {
+        setKeyboardVisible(false); // or some other action
+      },
+    );
+
+    return () => {
+      keyboardDidHideListener.remove();
+      keyboardDidShowListener.remove();
+    };
+  }, []);
 
   const renderPanel2 = () => {
     if (activePanel === 'camera')
@@ -50,7 +76,7 @@ export default function Meeting({ navigation }: { navigation: any }) {
                 <UserCenterImage background="orange">
                   <Icon name="account" size={40} />
                 </UserCenterImage>
-                <UserCenterName>Fernando Federson</UserCenterName>
+                <UserCenterName>Roberto Neves</UserCenterName>
               </UserCenterContainer>
             </Panel3>
             <Panel4>
@@ -79,7 +105,7 @@ export default function Meeting({ navigation }: { navigation: any }) {
                 <UserImage background="blue">
                   <Icon name="account" size={25} />
                 </UserImage>
-                <UserName>João Santo</UserName>
+                <UserName>João Santos</UserName>
               </UserRigthContainer>
 
               <UserRigthContainer>
@@ -104,6 +130,32 @@ export default function Meeting({ navigation }: { navigation: any }) {
               </UserRigthContainer>
             </Panel4>
           </View>
+          <CameraButtons>
+            <CameraButton
+              onPress={() => setMicrophone(!microphone)}
+              style={{
+                backgroundColor: microphone ? colors.primary : colors.danger,
+              }}
+            >
+              <Icon name={microphone ? 'microphone' : 'microphone-off'} />
+            </CameraButton>
+
+            <CameraButton
+              onPress={() => setVideo(!video)}
+              style={{
+                backgroundColor: video ? colors.primary : colors.danger,
+              }}
+            >
+              <Icon name={video ? 'video' : 'video-off-outline'} />
+            </CameraButton>
+
+            <CameraButton
+              onPress={() => navigation.goBack()}
+              style={{ backgroundColor: colors.danger }}
+            >
+              <Icon name="phone" />
+            </CameraButton>
+          </CameraButtons>
         </>
       );
 
@@ -116,7 +168,24 @@ export default function Meeting({ navigation }: { navigation: any }) {
           paddingBottom: 20,
         }}
       >
-        <Panel5>
+        <Panel5 keyboardShouldPersistTaps="handled">
+          <MessageContainer>
+            <MessageAuthor>Fernando Severino</MessageAuthor>
+            <Message>Testando chat</Message>
+          </MessageContainer>
+
+          <MessageContainer>
+            <MessageAuthor>Fernando Severino</MessageAuthor>
+            <Message>Testando chat</Message>
+          </MessageContainer>
+          <MessageContainer>
+            <MessageAuthor>Fernando Severino</MessageAuthor>
+            <Message>Testando chat</Message>
+          </MessageContainer>
+          <MessageContainer>
+            <MessageAuthor>Fernando Severino</MessageAuthor>
+            <Message>Testando chat</Message>
+          </MessageContainer>
           <MessageContainer>
             <MessageAuthor>Fernando Severino</MessageAuthor>
             <Message>Testando chat</Message>
@@ -150,9 +219,15 @@ export default function Meeting({ navigation }: { navigation: any }) {
         title="Meeting"
       />
 
-      <Panel1>
-        <Image source={cloud} style={{ width: '100%' }} resizeMode="contain" />
-      </Panel1>
+      {!isKeyboardVisible && (
+        <Panel1 style={{ flex: 0 }}>
+          <Image
+            source={cloud}
+            style={{ width: '100%' }}
+            resizeMode="contain"
+          />
+        </Panel1>
+      )}
 
       <Panel2>
         <ButtonPanelTypeContainer>

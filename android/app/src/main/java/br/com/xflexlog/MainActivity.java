@@ -1,4 +1,4 @@
-package com.mindbox;
+package br.com.mindbox;
 
 import com.facebook.react.ReactActivity;
 

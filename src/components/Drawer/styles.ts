@@ -12,6 +12,7 @@ export const SafeArea = styled.SafeAreaView`
 export const Container = styled.ScrollView.attrs({
   contentContainerStyle: {
     flexGrow: 1,
+    backgroundColor: 'transparent',
   },
 })`
   flex: 1;
@@ -47,7 +48,7 @@ export const HeaderButtonConfig = styled(FontAwesome).attrs(props => {
 export const PhotoContainer = styled.View`
   width: 100%;
   align-items: center;
-  background-color: transparent;
+  background-color: ${colors.secondary};
 `;
 
 export const UserName = styled.Text`
@@ -67,7 +68,7 @@ export const NoProfileImageContainer = styled.View`
   width: 140px;
   height: 140px;
   border-radius: 500px;
-  background-color: ${colors.white}33;
+  background-color: ${`${colors.white}AA`};
   align-items: center;
   justify-content: center;
 `;

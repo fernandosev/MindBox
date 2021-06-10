@@ -16,13 +16,13 @@ export default function Register() {
 
   return (
     <Container>
-      <SafeAreaView>
+      <SafeAreaView style={{ backgroundColor: 'transparent' }}>
         <LogoContainer>
           <Logo />
         </LogoContainer>
       </SafeAreaView>
       <Scroll>
-        <SafeAreaView>
+        <SafeAreaView style={{ backgroundColor: 'transparent' }}>
           <Title>Register</Title>
           <Input title="" placeholder="Name" style={{ marginBottom: 30 }} />
           <Input title="" placeholder="E-mail" style={{ marginBottom: 30 }} />
