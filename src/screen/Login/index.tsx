@@ -28,7 +28,9 @@ export default function Login() {
         </LogoContainer>
         <Input title="" placeholder="E-mail" style={{ marginBottom: 30 }} />
         <Input title="" placeholder="Password" secureTextEntry />
-        <ForgotPasswordButton>
+        <ForgotPasswordButton
+          onPress={() => navigation.navigate('ForgotPassword')}
+        >
           <ForgotPasswordText>Forgot password?</ForgotPasswordText>
         </ForgotPasswordButton>
 

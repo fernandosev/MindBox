@@ -22,67 +22,67 @@ export default function Home({ navigation }: { navigation: any }) {
 
       <Scroll>
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 01"
           color="purple"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 02"
           color="green"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 03"
           color="blue"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 04"
           color="orange"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 05"
           color="gray"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 06"
           color="red"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 07"
           color="purple"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 08"
           color="black"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 09"
           color="pink"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 10"
           color="green"
           numberOfUsers={200}
         />
         <RowRoom
-          onPress={() => navigation.navigate('Meeting')}
+          onPress={() => navigation.navigate('RoomDetails')}
           name="Room 11"
           color="blue"
           numberOfUsers={200}
